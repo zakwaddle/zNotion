@@ -1,6 +1,6 @@
-from project_package.zNotion.models.NotionBase import NotionBase
-from yell import yell
-from project_package.zNotion.models.PropertyTypes import (
+from .NotionBase import NotionBase
+from ..yell import yell
+from .PropertyTypes import (
     Property,
     TextProperty, TitleProperty, NumberProperty, 
     SelectProperty, MultiSelectProperty, LastEditedTimeProperty,

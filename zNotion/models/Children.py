@@ -1,5 +1,5 @@
-from project_package.zNotion.models.NotionBase import NotionBase
-from yell import yell
+from .NotionBase import NotionBase
+# from ..yell import yell
 
 
 # |--------------------------------------------------------------------------------| #
@@ -13,7 +13,7 @@ class Children(NotionBase):
         self._dirty = False
 
     def _wrap(self, block):
-        from project_package.zNotion.models.Block import Block
+        from .Block import Block
         return block if isinstance(block, Block) else Block(block)
     
     def __call__(self, *blocks):

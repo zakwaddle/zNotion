@@ -1,11 +1,11 @@
 from typing import Dict
 from zWebApiController import WebApiClient, WebApiAuth, WebRequest
-from project_package.zNotion.client.DatabaseRoutes import DatabaseRoutes
-from project_package.zNotion.client.PageRoutes import PageRoutes
-from project_package.zNotion.client.BlockRoutes import BlockRoutes
-from project_package.zNotion.models import List
+from .DatabaseRoutes import DatabaseRoutes
+from .PageRoutes import PageRoutes
+from .BlockRoutes import BlockRoutes
+from ..models import List
 import time
-from yell import yell
+from ..yell import yell
 
 
 NOTION_VERSION = "2022-06-28"

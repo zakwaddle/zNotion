@@ -1,4 +1,4 @@
-from project_package.zNotion.models.NotionBase import NotionBase
+from .NotionBase import NotionBase
 
 class Parent(NotionBase):
     

@@ -1,7 +1,7 @@
-from project_package.zNotion.models.Parent import Parent
-from project_package.zNotion.models.Properties import Properties
-from project_package.zNotion.models.Children import Children
-from project_package.zNotion.models.NotionBase import NotionBase
+from .Parent import Parent
+from .Properties import Properties
+from .Children import Children
+from .NotionBase import NotionBase
 
 class Page(NotionBase):
     object = 'page'

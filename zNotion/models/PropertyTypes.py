@@ -1,7 +1,7 @@
-from project_package.zNotion.models.RichText import RichText
-from project_package.zNotion.models.Property import Property, ChildPageTitle
-from project_package.zNotion.models.Option import Option
-from yell import yell
+from .RichText import RichText
+from .Property import Property, ChildPageTitle
+from .Option import Option
+from ..yell import yell
 
 
 class TitleProperty(Property):

@@ -1,4 +1,4 @@
-from project_package.zNotion.models import List, NotionBase
+from .models import List, NotionBase
 
 
 # |--------------------------------------------------------------------------------| #

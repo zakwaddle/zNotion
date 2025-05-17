@@ -1,8 +1,8 @@
 from typing import Optional, Dict
 from zBaseController import BaseClient, BaseRequest
-from project_package.zNotion.models import Page, Properties, EmojiIconProperty, Parent, Children
-from project_package.zNotion.util.payload_formatter import PayloadFormatter
-from yell import yell
+from ..models import Page, Properties, EmojiIconProperty, Parent, Children
+from ..util.payload_formatter import PayloadFormatter
+from ..yell import yell
 
 def prep(thing):
     return PayloadFormatter.format(thing)

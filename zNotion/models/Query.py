@@ -1,5 +1,5 @@
-from project_package.zNotion.models.NotionBase import NotionBase
-from yell import yell
+from .NotionBase import NotionBase
+from ..yell import yell
 
 
 # |--------------------------------------------------------------------------------| #

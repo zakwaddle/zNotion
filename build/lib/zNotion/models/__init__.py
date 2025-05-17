@@ -1,14 +1,14 @@
-from project_package.zNotion.models.RichText import RichText
-from project_package.zNotion.models.Parent import Parent, DatabaseParent, PageParent, WorkspaceParent
-from project_package.zNotion.models.Block import Block
-from project_package.zNotion.models.Children import Children 
-from project_package.zNotion.models.Option import Option
-from project_package.zNotion.models.Database import Database
-from project_package.zNotion.models.Page import Page
-from project_package.zNotion.models.List import List
-from project_package.zNotion.models.NotionBase import NotionBase
-from project_package.zNotion.models.Query import Query
-from project_package.zNotion.models.Properties import (
+from .RichText import RichText
+from .Parent import Parent, DatabaseParent, PageParent, WorkspaceParent
+from .Block import Block
+from .Children import Children
+from .Option import Option
+from .Database import Database
+from .Page import Page
+from .List import List
+from .NotionBase import NotionBase
+from .Query import Query
+from .Properties import (
     Properties, Property,
     TextProperty, TitleProperty, CheckboxProperty, SelectProperty, MultiSelectProperty,
     CreatedTimeProperty, LastEditedTimeProperty, NumberProperty, EmailProperty, EmojiIconProperty,

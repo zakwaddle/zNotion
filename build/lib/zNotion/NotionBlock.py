@@ -1,6 +1,6 @@
-from yell import yell
-from project_package.zNotion.models import NotionBase, Block, List, Children
-from project_package.zNotion.client.NotionApiClient import NotionApiClient
+from .yell import yell
+from .models import NotionBase, Block, List, Children
+from .client.NotionApiClient import NotionApiClient
 
 
 class NotionBlock(NotionBase):

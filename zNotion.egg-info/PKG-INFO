@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: zNotion
-Version: 2.0.0
+Version: 2.0.2
 Summary: Notion API abstraction and tools with optional dev console support
 Author: Zak Waddle
 Author-email: zakwaddle@gmail.com

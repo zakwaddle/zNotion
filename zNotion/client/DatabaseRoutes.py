@@ -1,7 +1,7 @@
 from zBaseController import BaseClient
-from project_package.zNotion.models import Query, Database, List, Parent, TitleProperty
-from project_package.zNotion.util.payload_formatter import PayloadFormatter
-from yell import yell
+from ..models import Query, Database, List, Parent, TitleProperty
+from ..util.payload_formatter import PayloadFormatter
+from ..yell import yell
 
 
 def prep(thing):

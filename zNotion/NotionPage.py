@@ -1,7 +1,7 @@
-from yell import yell
-from project_package.zNotion.client.NotionApiClient import NotionApiClient
-from project_package.zNotion.NotionBlock import NotionBlock
-from project_package.zNotion.models import Page, Properties, Children, Property, List, Block, EmojiIconProperty, NotionBase
+from .yell import yell
+from .client.NotionApiClient import NotionApiClient
+from .NotionBlock import NotionBlock
+from .models import Page, Properties, Children, Property, List, Block, EmojiIconProperty, NotionBase
 
 
 class NotionPage(NotionBase):

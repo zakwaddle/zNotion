@@ -1,4 +1,4 @@
-from project_package.zNotion.models.NotionBase import NotionBase
+from .NotionBase import NotionBase
 
 class RichText(NotionBase):
     def __init__(self, value=None, **meta):
@@ -24,8 +24,8 @@ class RichText(NotionBase):
         self.code = self._annotations.get('code', False) if self._annotations else False
         self.color = self._annotations.get('color', "default") if self._annotations else "default"
 
-        # If no annotations were given, but text content was passed directly
-        # try to pull value from raw content if no explicit value
+        # If no annotations were given, but text content was passed directly.
+        # Try to pull value from raw content if no explicit value
         if self.value is None:
             self.value = text_meta.get("content", "")
 

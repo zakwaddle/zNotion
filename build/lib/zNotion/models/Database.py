@@ -1,7 +1,7 @@
-from project_package.zNotion.models.RichText import RichText
-from project_package.zNotion.models.Properties import Properties
-from project_package.zNotion.models.Parent import Parent
-from project_package.zNotion.models.NotionBase import NotionBase
+from .RichText import RichText
+from .Properties import Properties
+from .Parent import Parent
+from .NotionBase import NotionBase
 
 
 class Database(NotionBase):

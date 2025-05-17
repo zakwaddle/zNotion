@@ -1,6 +1,6 @@
 import json
-from project_package.zNotion.util.parse_objects import parse_object
-from project_package.zNotion.models.NotionBase import NotionBase
+from ..util.parse_objects import parse_object
+from .NotionBase import NotionBase
 # from yell import yell
 
 class List(NotionBase):

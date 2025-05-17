@@ -29,4 +29,7 @@ zNotion/models/PropertyTypes.py
 zNotion/models/Query.py
 zNotion/models/RichText.py
 zNotion/models/__init__.py
+zNotion/util/__init__.py
+zNotion/util/parse_objects.py
+zNotion/util/payload_formatter.py
 zNotion/yell/__init__.py

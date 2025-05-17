@@ -1,6 +1,6 @@
-from yell import yell
-from project_package.zNotion.client.NotionApiClient import NotionApiClient
-from project_package.zNotion.models import (
+from .yell import yell
+from .client.NotionApiClient import NotionApiClient
+from .models import (
     Database, Properties, Children, DatabaseParent, Query, EmojiIconProperty, NotionBase
 )
 

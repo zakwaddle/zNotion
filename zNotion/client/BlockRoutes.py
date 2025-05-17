@@ -1,8 +1,8 @@
 from typing import Dict
 from zBaseController import BaseClient, BaseRequest
-from project_package.zNotion.models import Block, Children, List
-from project_package.zNotion.util.payload_formatter import PayloadFormatter
-from yell import yell
+from ..models import Block, Children, List
+from ..util.payload_formatter import PayloadFormatter
+from ..yell import yell
 
 
 def prep(thing):

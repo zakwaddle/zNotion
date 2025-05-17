@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='zNotion',
-    version='2.0.0',
+    version='2.0.2',
     packages=find_packages(),
     description='Notion API abstraction and tools with optional dev console support',
     author='Zak Waddle',
