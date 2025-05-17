@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: zNotion
+Version: 2.0.0
+Summary: Notion API abstraction and tools with optional dev console support
+Author: Zak Waddle
+Author-email: zakwaddle@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Requires-Dist: zBaseController
+Requires-Dist: zWebApiController
+Requires-Dist: requests
+Provides-Extra: dev
+Requires-Dist: yell; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

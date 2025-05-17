@@ -1,19 +1,13 @@
-from project_package.zNotion.models.RichText import RichText
-from project_package.zNotion.models.Block import Block
-from project_package.zNotion.models.Option import Option
-from project_package.zNotion.models.Page import Page
-
-from project_package.zNotion.models.Children import Children
-from project_package.zNotion.models.Parent import Parent
+from yell import yell
+from project_package.zNotion.models import RichText, Block, Option, Page, Children, Parent
 from project_package.zNotion.models.Query import (
     Query, FilterQuery, FilterProperty, FilterCombiner, Sort, NullFilter,
-    ) 
+    )
 from project_package.zNotion.models.Properties import (
     Properties, TitleProperty, TextProperty, NumberProperty, CheckboxProperty,
-    SelectProperty, MultiSelectProperty, CreatedTimeProperty, LastEditedTimeProperty, 
+    SelectProperty, MultiSelectProperty, CreatedTimeProperty, LastEditedTimeProperty,
     EmojiIconProperty, PhoneNumberProperty, URLProperty, EmailProperty, DateProperty, ChildPageTitle
     )
-from yell import yell
 
 # |--------------------------------------------------------------------------------| #
 

@@ -1,17 +1,23 @@
-import setuptools
+from setuptools import setup, find_packages
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
+setup(
     name='zNotion',
     version='2.0.0',
-    author='Zak',
+    packages=find_packages(),
+    description='Notion API abstraction and tools with optional dev console support',
+    author='Zak Waddle',
     author_email='zakwaddle@gmail.com',
-    description="A stylized developer console logger with themes and introspection.",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    packages=['yell'],
-    install_requires=[],
-    python_requires=">=3.7",
+    install_requires=[
+        'zBaseController',
+        'zWebApiController',
+        'requests',
+    ],
+    extras_require={
+        'dev': ['yell'],
+    },
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'Operating System :: OS Independent',
+    ],
+    python_requires='>=3.6',
 )
