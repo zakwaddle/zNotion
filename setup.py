@@ -2,8 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='zNotion',
-    version='2.0.2',
-    packages=find_packages(),
+    version='2.0.3',
+    url='https://github.com/zakwaddle/zNotion',
+    packages=find_packages(where="."),
+    package_dir={"": "."},
     description='Notion API abstraction and tools with optional dev console support',
     author='Zak Waddle',
     author_email='zakwaddle@gmail.com',

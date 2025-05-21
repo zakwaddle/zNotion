@@ -22,6 +22,8 @@ class DatabaseRoutes:
         return Database(database)
     
     def query(self, database_id: str, query: Query = None, start_cursor=None) -> List:
+        def next_page(start_cursor):
+            return self.query(database_id, query, start_cursor)
         """Query a Notion database."""
         q = prep(query)
         if start_cursor is not None:
@@ -31,7 +33,7 @@ class DatabaseRoutes:
         yell("query results:", bool(results))
         if hasattr(results, "response"):
             yell("WebRequest?! -> ", results.response.status_code, results.response._text)
-        return List(results)
+        return List(results, func_for_next=next_page)
 
     def update(self, database_id) -> Database:
         """Retrieve a Notion database by ID."""

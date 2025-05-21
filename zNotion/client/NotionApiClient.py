@@ -107,12 +107,15 @@ class NotionApiClient(WebApiClient):
         
 # |------------------------------ Search ------------------------------| #
  
-    def search(self, query: str = '', **kwargs) -> List:
+    def search(self, query: str = '', start_cursor=None, **kwargs) -> List:
         """Search for pages, databases, or blocks in a workspace."""
         params = {"query": query} if query else {}
+        params.update({"start_cursor": start_cursor}) if start_cursor is not None else {}
         params.update(kwargs)
+        def next_page(start_cursor):
+            self.search(query=query, start_cursor=start_cursor, **kwargs)
         results = self.post("search", json=params)
-        return List(results)
+        return List(results, func_for_next=next_page)
  
  # |------------------------------ Comments ------------------------------| #
     """

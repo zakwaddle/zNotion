@@ -62,7 +62,6 @@ class BlockRoutes:
     def get_children(self, parent_id: str) -> List:
         """Get the children blocks of a page or block."""
         yell(f'get_children(parent_id={parent_id})')
-        
         raw = self.api.get("blocks", parent_id, "children")
         return List(raw)
     
