@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='zNotion',
-    version='2.0.4',
+    version='2.0.5',
     url='https://github.com/zakwaddle/zNotion',
     packages=find_packages(where="."),
     package_dir={"": "."},
