@@ -5,7 +5,7 @@ from ..models.Query import (
     )
 from ..models.Properties import (
     Properties, TitleProperty, TextProperty, NumberProperty, CheckboxProperty, RelationProperty,
-    SelectProperty, MultiSelectProperty, CreatedTimeProperty, LastEditedTimeProperty,
+    SelectProperty, MultiSelectProperty, CreatedTimeProperty, LastEditedTimeProperty, RollupProperty,
     EmojiIconProperty, PhoneNumberProperty, URLProperty, EmailProperty, DateProperty, ChildPageTitle
     )
 
@@ -106,6 +106,10 @@ class PayloadFormatter:
             return PayloadFormatter.format_email_prop(prop)
         if isinstance(prop, PhoneNumberProperty):
             return PayloadFormatter.format_phone_number_prop(prop)
+        if isinstance(prop, RelationProperty):
+            return PayloadFormatter.format_relation_prop(prop)
+        if isinstance(prop, RollupProperty):
+            return PayloadFormatter.format_rollup_prop(prop)
         else:
             raise TypeError(f'unsupported property type: {type(prop)}')
     
@@ -409,3 +413,13 @@ class PayloadFormatter:
                 "relation": value
             }
         }
+    @staticmethod
+    def format_rollup_prop(_=None):
+        # name = rollup_prop.name
+        # value = rollup_prop.value or {}
+        return {}
+            # name: {
+            #     "rollup": value
+            # }
+            # name: {}
+        # }

@@ -176,6 +176,13 @@ class RelationProperty(Property):
         self.set_value(self.relation)
 
 
+class RollupProperty(Property):
+    def __init__(self, kwargs):
+        super().__init__(kwargs)
+        self.rollup = self.meta.pop('rollup', {})
+        self.set_value(self.rollup)
+
+
 class ChildPageTitle(NotionBase):
     def __init__(self, title):
         self.title = title

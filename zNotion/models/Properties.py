@@ -2,7 +2,7 @@ from .NotionBase import NotionBase
 from ..yell import yell
 from .PropertyTypes import (
     Property,
-    TextProperty, TitleProperty, NumberProperty, 
+    TextProperty, TitleProperty, NumberProperty, RollupProperty,
     SelectProperty, MultiSelectProperty, LastEditedTimeProperty,
     CheckboxProperty, CreatedTimeProperty, EmojiIconProperty, RelationProperty,
     DateProperty, URLProperty, EmailProperty, PhoneNumberProperty, ChildPageTitle
@@ -24,6 +24,8 @@ class Properties(NotionBase):
         "checkbox" : CheckboxProperty,
         "created_time" : CreatedTimeProperty,
         "relation": RelationProperty,
+        "rollup": RollupProperty,
+        "child_page_title": ChildPageTitle,
     }
 
     def __init__(self, properties):
@@ -112,6 +114,7 @@ class Properties(NotionBase):
             prop.set_value(property_value)
             yell(prop)
             return prop
+        return None
 
     def empty_props(self):
         props = {}

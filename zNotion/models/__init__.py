@@ -9,7 +9,7 @@ from .List import List
 from .NotionBase import NotionBase
 from .Query import Query
 from .Properties import (
-    Properties, Property, RelationProperty, DateProperty,
+    Properties, Property, RelationProperty, DateProperty, RollupProperty,
     TextProperty, TitleProperty, CheckboxProperty, SelectProperty, MultiSelectProperty,
     CreatedTimeProperty, LastEditedTimeProperty, NumberProperty, EmailProperty, EmojiIconProperty,
     URLProperty, PhoneNumberProperty, ChildPageTitle
