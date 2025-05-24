@@ -2,7 +2,6 @@ from .RichText import RichText
 from .Children import Children
 from .NotionBase import NotionBase
 
-
 class Block(NotionBase):
     # Notion block types that support "children"
     CHILD_SUPPORTED_TYPES = {
@@ -41,10 +40,6 @@ class Block(NotionBase):
         self.meta = raw_response.get('meta', {})
         if not self.meta:
             self.meta = raw_response.get(self.type)
-        # if self.type == "child_page":
-        #     self.meta.update({"title": self._raw.get('child_page')})
-        # if self.type == "child_database":
-        #     self.meta.update({"title": self._raw.get('child_database')})
 
     def __hash__(self):
         return hash((
