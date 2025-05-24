@@ -4,7 +4,7 @@ from .PropertyTypes import (
     Property,
     TextProperty, TitleProperty, NumberProperty, 
     SelectProperty, MultiSelectProperty, LastEditedTimeProperty,
-    CheckboxProperty, CreatedTimeProperty, EmojiIconProperty, 
+    CheckboxProperty, CreatedTimeProperty, EmojiIconProperty, RelationProperty,
     DateProperty, URLProperty, EmailProperty, PhoneNumberProperty, ChildPageTitle
 )
 
@@ -23,6 +23,7 @@ class Properties(NotionBase):
         "last_edited_time" : LastEditedTimeProperty,
         "checkbox" : CheckboxProperty,
         "created_time" : CreatedTimeProperty,
+        "relation": RelationProperty,
     }
 
     def __init__(self, properties):

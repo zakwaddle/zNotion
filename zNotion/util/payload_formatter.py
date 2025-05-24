@@ -4,7 +4,7 @@ from ..models.Query import (
     Query, FilterQuery, FilterProperty, FilterCombiner, Sort, NullFilter,
     )
 from ..models.Properties import (
-    Properties, TitleProperty, TextProperty, NumberProperty, CheckboxProperty,
+    Properties, TitleProperty, TextProperty, NumberProperty, CheckboxProperty, RelationProperty,
     SelectProperty, MultiSelectProperty, CreatedTimeProperty, LastEditedTimeProperty,
     EmojiIconProperty, PhoneNumberProperty, URLProperty, EmailProperty, DateProperty, ChildPageTitle
     )
@@ -40,8 +40,8 @@ class PayloadFormatter:
             yell("formatting children...")
             return {"children" : [
                 PayloadFormatter.format_block(block)
-                for block in obj._blocks
-            ]} if obj._blocks else {}
+                for block in obj.blocks
+            ]} if obj.blocks else {}
         if isinstance(obj, Query):
             return PayloadFormatter.format_query(obj)
         for fn in (
@@ -111,8 +111,6 @@ class PayloadFormatter:
     
     @staticmethod
     def format_query_filter(query_filter: FilterQuery):
-        
-        
         if isinstance(query_filter, FilterCombiner):
             yell(f"is FilterCombiner - {query_filter}")
             return {query_filter.op: [PayloadFormatter.format_query_filter(f) for f in query_filter.filters]}
@@ -123,6 +121,8 @@ class PayloadFormatter:
                     query_filter.type: {
                         query_filter.op: query_filter.value
                         }}
+        return None
+
     @staticmethod
     def format_query_sort(query_sorts: Sort):
         return {"property":query_sorts.property, "direction": query_sorts.direction}
@@ -167,6 +167,7 @@ class PayloadFormatter:
             if not link:
                 del block["text"]["link"]
             return block
+        return None
 
     @staticmethod
     def format_option(option: Option):
@@ -184,7 +185,7 @@ class PayloadFormatter:
     def format_block(block: Block):
         yell("in format_block")
         block_type = block.type
-        if block_type in ("link_to_page"):
+        if block_type == "link_to_page":
             page_id = block.meta.get("page_id")
             payblock = {
                 # "object": "block",
@@ -395,5 +396,16 @@ class PayloadFormatter:
         return {
             name: {
                 "url": url
+            }
+        }
+    @staticmethod
+    def format_relation_prop(relation_prop: RelationProperty):
+        name = relation_prop.name
+        value = relation_prop.value or []
+        if isinstance(value, dict):
+            value = [value]
+        return {
+            name: {
+                "relation": value
             }
         }
